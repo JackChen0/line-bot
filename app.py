@@ -54,8 +54,9 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=reply))
-
+        TextSendMessage(text=reply),
+        sticker_message)
+        return
 
 if __name__ == "__main__":
     app.run()

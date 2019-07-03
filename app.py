@@ -39,6 +39,9 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     reply = 'Sorry'
+    sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='2')
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply),
@@ -52,6 +55,6 @@ def handle_message(event):
             sticker_id='2')
     elif msg == 'bye bye':
         reply = 'See you'
-    
+        return
 if __name__ == "__main__":
     app.run()

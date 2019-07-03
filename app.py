@@ -40,12 +40,19 @@ def handle_message(event):
     msg = event.message.text
     reply = 'Sorry'
     
-    if msg == 'hi':
+    if msg in ['hi ','hi','Hi']:
         reply = 'hi'
+        a = '11537'
+        b = '52002738'
     elif msg == 'bye bye':
         reply = 'See you'
+    elif msg in 
+    
     line_bot_api.reply_message(
         event.reply_token,
+        StickerSendMessage(
+            package_id= a,
+            sticker_id = b)
         TextSendMessage(text=reply))
 
 

@@ -45,12 +45,13 @@ def handle_message(event):
         sticker_message)
     return
 
-if msg in ['hi ','hi','Hi']:
-    reply = 'hi'
-    sticker_message = StickerSendMessage(
-        package_id='1',
-        sticker_id='2')
-elif msg == 'bye bye':
-    reply = 'See you'
+    if msg in ['hi ','hi','Hi']:
+        reply = 'hi'
+        sticker_message = StickerSendMessage(
+            package_id='1',
+            sticker_id='2')
+    elif msg == 'bye bye':
+        reply = 'See you'
+    
 if __name__ == "__main__":
     app.run()

@@ -42,14 +42,13 @@ def handle_message(event):
     
     if msg in ['hi ','hi','Hi']:
         reply = 'hi'
-        a = '1'
-        b = '1'
+        sticker_message = StickerSendMessage(
+        package_id='1',
+        sticker_id='2')
     elif msg == 'bye bye':
         reply = 'See you'
     
-    sticker_message = StickerSendMessage(
-        package_id=a,
-        sticker_id=b)
+    
 
 
     line_bot_api.reply_message(

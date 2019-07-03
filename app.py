@@ -41,6 +41,7 @@ def handle_message(event):
     reply = 'Sorry'
 
     if 'give me sticker' in msg:
+        reply = 'See you'
         sticker_message = StickerSendMessage(
                 package_id='1',
                 sticker_id='1'
@@ -48,6 +49,9 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             sticker_message)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=reply))
         return
 
     if msg == 'bye bye':

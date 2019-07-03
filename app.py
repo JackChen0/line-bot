@@ -46,13 +46,12 @@ def handle_message(event):
         b = '52002738'
     elif msg == 'bye bye':
         reply = 'See you'
-    elif msg in 
-    
+        
     line_bot_api.reply_message(
         event.reply_token,
         StickerSendMessage(
             package_id= a,
-            sticker_id = b)
+            sticker_id = b),
         TextSendMessage(text=reply))
 
 

@@ -39,23 +39,18 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     reply = 'Sorry'
-    
-    if msg in ['hi ','hi','Hi']:
-        reply = 'hi'
-        sticker_message = StickerSendMessage(
-        package_id='1',
-        sticker_id='2')
-    elif msg == 'bye bye':
-        reply = 'See you'
-    
-    
-
-
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply),
         sticker_message)
     return
 
+if msg in ['hi ','hi','Hi']:
+    reply = 'hi'
+    sticker_message = StickerSendMessage(
+        package_id='1',
+        sticker_id='2')
+elif msg == 'bye bye':
+    reply = 'See you'
 if __name__ == "__main__":
     app.run()
